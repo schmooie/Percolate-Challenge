@@ -7,8 +7,12 @@ app.use(bodyParser());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+app.post('/request-demo', function(req, res) {
+	console.log(req.body);
+});
+
 app.get('/', function(req, res) {
-	res.render('../client/index.html');
+	res.render('../index.html');
 });
 
 app.listen(process.env.PORT || 8080);

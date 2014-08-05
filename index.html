@@ -17,15 +17,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="//percolate.com/cdn/css/7733bb75f81a814320e3d58f77f9dc34/ie8-responsive-brochureware.css" />
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
 </head>
 
-<body class=" non-admin" id="public-brochureware-client-body">
+<body ng-app="percolate" ng-controller="MainCtrl" class="non-admin" id="public-brochureware-client-body">
   <header class="navbar brochureware-nav navbar flush navbar-static-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -45,13 +39,13 @@
       <div class="brochureware-nav-primary-nav collapse navbar-collapse mobile-push-bottom" id="brochureware-navbar-collapsable">
         <ul class="nav navbar-nav brochureware-nav-primary-links">
           <li class="active">
-            <a href="/our-platform/" class="">Platform</a>
+            <a href="http://percolate.com/our-platform/" class="">Platform</a>
           </li>
           <li>
-            <a href="/clients/" class="">Clients</a>
+            <a href="http://percolate.com/clients/" class="">Clients</a>
           </li>
           <li>
-            <a href="/about/" class="">Company</a>
+            <a href="http://percolate.com/about/" class="">Company</a>
           </li>
           <li>
             <a href="http://learn.percolate.com">Insights</a>
@@ -62,14 +56,14 @@
         </ul>
         <ul class="nav navbar-nav navbar-right brochureware-nav-secondary-links">
           <li>
-            <a href="/about/jobs/">We're Hiring!</a>
+            <a href="http://percolate.com/about/jobs/">We're Hiring!</a>
           </li>
 
           <li>
-            <a href="/accounts/login/">Login</a>
+            <a href="http://percolate.com/accounts/login/">Login</a>
           </li>
           <li>
-            <a href="/request-demo">
+            <a href="http://percolate.com/request-demo">
               <button class="btn link request-demo-btn">Request a Demo</button>
             </a>
           </li>
@@ -191,26 +185,23 @@
     <div class="h4 text-center push-bottom">Learn how Percolate’s Content Marketing platform can help your brand.</div>
   </div>
   <div class="container text-center">
-    <form class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" data-mixpanel="demo" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    <form class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm()">
       <div class="alert-list status-error-content">
         <div class="alert alert-danger text-center">
           Please use a corporate email account
         </div>
       </div>
-      <input type="hidden" name="oid" value="00Dd0000000cjQk" />
-      <input type="hidden" name="retURL" value="https://percolate.com/request-demo/success/" />
-      <input type="hidden" name="lead_source" value="Web" />
       <div class="row row-centered-md">
         <div class="col-md-2 push-bottom ">
-          <input type="text" placeholder="First name" name="first_name" class="fn-required form-control name">
+          <input type="text" placeholder="First name" ng-model="user.first" class="fn-required form-control name">
         </div>
 
         <div class="col-md-2 push-bottom ">
-          <input type="text" placeholder="Last name" name="last_name" class="fn-required form-control name">
+          <input type="text" placeholder="Last name" ng-model="user.last" class="fn-required form-control name">
         </div>
 
         <div class="col-md-2 push-bottom ">
-          <input type="email" placeholder="Company email" name="email" class="fn-required form-control email fn-corporate-email">
+          <input type="email" placeholder="Company email" ng-model="user.email" class="fn-required form-control email fn-corporate-email">
         </div>
 
         <div class="col-md-2 push-bottom ">
@@ -282,6 +273,7 @@
   </footer>
 
   <script src='bower_components/angular/angular.js'></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
