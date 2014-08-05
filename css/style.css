@@ -8920,7 +8920,7 @@ a.bware-hero-overlay:hover {
     -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
   .dennys .bware-hero-background {
-    background-image: url("/media/images/brochure/casestudies/dennys/hero.jpg");
+    background-image: url("../img/hero.jpg");
     background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
@@ -8988,7 +8988,7 @@ a.bware-hero-overlay:hover {
     -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
   .dennys .bware-hero-background {
-    background-image: url("/media/images/brochure/casestudies/dennys/hero_small.jpg");
+    background-image: url("../img/hero_small.jpg");
     background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
