@@ -8919,8 +8919,8 @@ a.bware-hero-overlay:hover {
     position: absolute;
     -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
-  .dennys .bware-hero-background {
-    background-image: url("../img/hero.jpg");
+  .suit-supply .bware-hero-background {
+    background-image: url("../img/giphy.gif");
     background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
@@ -8928,7 +8928,6 @@ a.bware-hero-overlay:hover {
     width: 100%;
     overflow: hidden;
     position: absolute;
-    -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
   .u-phoenix .bware-hero-background {
     background-image: url("/media/images/brochure/casestudies/phoenix/hero.jpg");
@@ -8987,8 +8986,8 @@ a.bware-hero-overlay:hover {
     position: absolute;
     -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
-  .dennys .bware-hero-background {
-    background-image: url("../img/hero_small.jpg");
+  .suit-supply .bware-hero-background {
+    background-image: url("../img/giphy.gif");
     background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
@@ -8996,7 +8995,6 @@ a.bware-hero-overlay:hover {
     width: 100%;
     overflow: hidden;
     position: absolute;
-    -ms-behavior: url(/css/less/brochureware/backgroundsize.min.htc)
   }
   .u-phoenix .bware-hero-background {
     background-image: url("/media/images/brochure/casestudies/phoenix/hero_small.jpg");
