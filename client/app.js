@@ -1,7 +1,7 @@
 var app = angular.module('percolate', []);
 
-app.controller('MainCtrl', ['$scope', '$http',
-  function($scope, $http) {
+app.controller('MainCtrl', ['$scope', '$http', '$timeout',
+  function($scope, $http, $timeout) {
     $scope.submitted = false;
     $scope.user = {};
     $scope.emailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -14,6 +14,10 @@ app.controller('MainCtrl', ['$scope', '$http',
           	$scope.successUser = $scope.user.first;
           	$scope.user = {};
           	$scope.demoRequestSuccess = true;
+          	$timeout(function(){
+          		$scope.demoRequestSuccess = false;
+          		$scope.submitted = false;
+          	}, 2000);
             console.log(data);
           });
       } else {
