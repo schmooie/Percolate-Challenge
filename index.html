@@ -140,9 +140,9 @@
     <form name="demoForm" class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm(demoForm.$valid)" novalidate>
       <div class="alert-list status-error-content" ng-show="(demoForm.$invalid || demoRequestSuccess || badRequest) && submitted" ng-cloak>
         <div class="alert text-center" ng-class="{'alert-danger': !demoRequestSuccess, 'alert-success': demoRequestSuccess}">
-         <p ng-show="demoForm.firstname.$invalid" ng-hide="demoRequestSuccess">Hey Jason, what's your first name?</p>
-         <p ng-show="demoForm.lastname.$invalid" ng-hide="demoRequestSuccess">Hey Bourne, what's your last name?</p>
-         <p ng-show="demoForm.useremail.$invalid" ng-hide="demoRequestSuccess">Please enter a valid e-mail address.</p>
+         <p ng-show="demoForm.firstname.$invalid">Hey Jason, what's your first name?</p>
+         <p ng-show="demoForm.lastname.$invalid">Hey Bourne, what's your last name?</p>
+         <p ng-show="demoForm.useremail.$invalid">Please enter a valid e-mail address.</p>
          <p ng-show="demoRequestSuccess">{{user.first}}, you're all set. A Percolator will reach out to you soon.</p>
          <p ng-show="badRequest">Bad request: please check over your information and try again.</p>
        </div>
@@ -218,7 +218,7 @@
       </ul>
     </div>
   </footer>
-  <script src='bower_components/angular/angular.js'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
