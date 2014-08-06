@@ -12,11 +12,11 @@ var transporter = nodemailer.createTransport({
 });
 
 var mailOptions = {
-	from: 'Dum Dum Dugan <dummyuser5000@gmail.com>',
+	from: 'Percolate <dummyuser5000@gmail.com>',
 	subject: 'You\'re Percolating!'
 };
 
-var twoCities = 'Here\'s some Dickens for you.<br><br>' +
+var twoCities = 'Here\'s some Dickens for you. It\'ll class up the joint.<br><br>' +
 		'It was the best of times,<br>' +
 		'it was the worst of times,<br>' +
 		'it was the age of wisdom,<br>' +
@@ -34,7 +34,7 @@ var twoCities = 'Here\'s some Dickens for you.<br><br>' +
 		'in short, the period was so far like the present period, that some of<br>' +
 		'its noisiest authorities insisted on its being received, for good or for<br>' +
 		'evil, in the superlative degree of comparison only.<br><br>' +
-		'From <a href="http://percolate.com">Percolate</a>';
+		'With ♥ from <a href="http://percolate.com">Percolate</a>.';
 
 app.use(express.static(__dirname + '/client'));
 app.use(bodyParser());

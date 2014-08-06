@@ -1,24 +1,19 @@
 <!doctype html>
 <html class="no-js" lang="en" id="public-brochureware-client">
-
 <head>
   <title>Suit Supply Content Marketing Case Study | Client Success Stories | Percolate</title>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Percolate is your system of record for marketing" />
-
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" type="text/css" href="css/fonts.css" />
 </head>
-
 <body ng-app="percolate" ng-controller="MainCtrl" class="non-admin" id="public-brochureware-client-body">
   <header class="navbar brochureware-nav navbar flush navbar-static-top" role="navigation">
     <div class="container">
@@ -31,10 +26,8 @@
         </button>
         <a href="/" class="brochureware-nav-logo navbar-brand">
           <img class="logo" src="https://percolate.com/media/images/logo.png" alt="Percolate" style="width:200px">
-
         </a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="brochureware-nav-primary-nav collapse navbar-collapse mobile-push-bottom" id="brochureware-navbar-collapsable">
         <ul class="nav navbar-nav brochureware-nav-primary-links">
@@ -58,7 +51,6 @@
           <li>
             <a href="http://percolate.com/about/jobs/">We're Hiring!</a>
           </li>
-
           <li>
             <a href="http://percolate.com/accounts/login/">Login</a>
           </li>
@@ -67,20 +59,14 @@
               <button class="btn link request-demo-btn">Request a Demo</button>
             </a>
           </li>
-
         </ul>
       </div>
     </div>
   </header>
-
-
-
   <div class="fn-global-content global-content hide">
     <div class="fn-alerts-global alerts-global hide"></div>
     <div class="fn-standalone-post-form-section standalone-post-form-section"></div>
   </div>
-
-
   <div class="bware-hero small suit-supply">
     <div class="bware-hero-background"></div>
     <div class="bware-hero-container">
@@ -104,63 +90,36 @@
           Hank Pym &mdash; VP Marketing at Suit Supply
         </span>
       </div>
-
     </div>
     <div class="client-sections push-bottom-large">
-
       <div class="client-section">
         <div class="h2 push-bottom">Voice</div>
-
         <div class="push-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolorem, distinctio temporibus dolorum commodi aperiam eius fuga neque, earum eveniet.</div>
-
-
         <img src="img/suitsupply-5.jpg" class="img-responsive mobile-push-top center-block">
-
       </div>
-
-
       <div class="client-section">
         <div class="h2 push-bottom">Look</div>
-
         <div class="push-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident sint dolores repudiandae neque non minima unde maiores!</div>
-
-
         <img src="img/suitsupply-7.jpg" class="img-responsive mobile-push-top center-block">
-
       </div>
       <div class="clearfix"></div>
-
       <div class="client-section">
         <div class="h2 push-bottom">Effective</div>
-
         <div class="push-bottom">Posts created through Percolate resonated well with Suit Supply's audience.</div>
-
-
         <img src="https://percolate.com/media/images/brochure/casestudies/dennys/effective.png" class="img-responsive mobile-push-top center-block">
-
       </div>
-
-
       <div class="client-section">
         <div class="h2 push-bottom">Efficient</div>
-
         <div class="push-bottom">Percolate helped Suit Supply produce quality content in an efficient &amp; sustainable manner.</div>
-
-
         <img src="https://percolate.com/media/images/brochure/casestudies/dennys/efficient.png" class="img-responsive mobile-push-top center-block">
-
       </div>
       <div class="clearfix"></div>
-
     </div>
   </div>
-
-
   <div class="bware-hero small suit-supply quote-hero">
     <div class="bware-hero-background"></div>
     <div class="bware-hero-container">
       <a href="#" class="bware-hero-overlay centered purple text-center">
-
         <div class="h4 italic push-bottom bware-hero-quote fn-textfill">
           <span>“Percolate’s capacity to find good content and suggest optimal times to publish, helped our engagement &amp; shares go through the roof.”</span>
         </div>
@@ -168,50 +127,40 @@
           <img src="https://percolate.com/media/images/brochure/casestudies/dennys/tyler.jpg" />
           <span class="attribution">
             Adam West &mdash; Strategy Director at Star City Advertising
-
           </span>
         </div>
-
-
       </a>
     </div>
   </div>
-
-
-
   <div class="container push-bottom">
     <div class="h3 text-center push-bottom">See Percolate in action</div>
     <div class="h4 text-center push-bottom">Learn how Percolate’s Content Marketing platform can help your brand.</div>
   </div>
   <div class="container text-center">
     <form name="demoForm" class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm(demoForm.$valid)" novalidate>
-      <div class="alert-list status-error-content" ng-show="demoForm.$invalid && submitted">
-        <div class="alert alert-danger text-center">
-          <p ng-show="!demoForm.firstname.$error.minlength">Hey Jason, what's your first name?</p>
-          <p ng-show="!demoForm.lastname.$error.minlength">Hey Bourne, what's your last name?</p>
-          <p ng-show="!demoForm.useremail.$error.pattern">Please enter a valid e-mail address.</p>
+      <div class="alert-list status-error-content" ng-show="(demoForm.$invalid || demoRequestSuccess) && submitted">
+        <div class="alert text-center" ng-class="{'alert-danger': !demoRequestSuccess, 'alert-success': demoRequestSuccess}">
+          <p ng-show="!demoForm.firstname.$error.minlength" ng-hide="demoRequestSuccess">Hey Jason, what's your first name?</p>
+          <p ng-show="!demoForm.lastname.$error.minlength" ng-hide="demoRequestSuccess">Hey Bourne, what's your last name?</p>
+          <p ng-show="!demoForm.useremail.$error.pattern" ng-hide="demoRequestSuccess">Please enter a valid e-mail address.</p>
+          <p ng-show="demoRequestSuccess">{{successUser}}, you're all set. A Percolater will reach out to you soon.</p>
         </div>
       </div>
       <div class="row row-centered-md">
         <div class="col-md-2 push-bottom ">
           <input validate-input first-name-input type="text" placeholder="First name" name="firstname" ng-model="user.first" class="form-control" ng-minlength="1" required>
         </div>
-
         <div class="col-md-2 push-bottom ">
           <input validate-input last-name-input type="text" placeholder="Last name" name="lastname" ng-model="user.last" class="form-control" ng-minlength="1" required>
         </div>
-
         <div class="col-md-2 push-bottom ">
           <input validate-input email-input type="email" placeholder="Company email" name="useremail" ng-model="user.email" class="form-control" ng-pattern="emailRegExp" required>
         </div>
-
         <div class="col-md-2 push-bottom ">
           <button class="btn btn-warning demo-request-button">Request a demo</button>
-
         </div>
       </div>
     </form>
-
   </div>
   <div class="container">
     <div class="row">
@@ -236,7 +185,6 @@
       </div>
     </div>
   </div>
-
   <div class="brochureware-footer-nav-spacer footer-nav-spacer hidden-xs"></div>
   <footer class="brochureware-nav navbar-fixed-bottom">
     <div class="container">
@@ -247,7 +195,6 @@
         <icon class="icon icon-48 icon-solid-drip brand-icon-sm color-white pull-left visible-sm"></icon>
         <icon class="icon icon-24 icon-solid-drip push-top color-white center-block visible-xs"></icon>
       </span>
-
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="/about/contact/">Contact</a>
@@ -270,9 +217,7 @@
       </ul>
     </div>
   </footer>
-
   <script src='bower_components/angular/angular.js'></script>
   <script src="app.js"></script>
 </body>
-
 </html>

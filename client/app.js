@@ -11,6 +11,9 @@ app.controller('MainCtrl', ['$scope', '$http',
       if (isValid) {
         $http.post('/request-demo', $scope.user)
           .success(function(data) {
+          	$scope.successUser = $scope.user.first;
+          	$scope.user = {};
+          	$scope.demoRequestSuccess = true;
             console.log(data);
           });
       } else {
@@ -50,7 +53,6 @@ app.directive('validateInput', [
       restrict: 'A',
       require: 'ngModel',
       link: function(scope, elem, attr, ctrl) {
-
         elem.on('focus', function() {
           elem.removeClass('bad-credentials');
         });
