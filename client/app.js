@@ -5,14 +5,17 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
     $scope.submitted = false;
     $scope.user = {};
     $scope.emailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    $scope.sendingRequest = false;
 
     $scope.submitForm = function(isValid) {
+    	$scope.sendingRequest = true;
       $scope.submitted = true;
       $scope.badRequest = false;
       $scope.demoRequestSuccess = false;
       if (isValid) {
         $http.post('/request-demo', $scope.user)
           .success(function(data) {
+          	$scope.sendingRequest = false;
             $scope.demoRequestSuccess = true;
             $timeout(function() {
 							$scope.user = {};
@@ -21,8 +24,11 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
             }, 2000);
           })
           .error(function(data) {
+          	$scope.sendingRequest = false;
           	$scope.badRequest = true;
           });
+      } else {
+      	$scope.sendingRequest = false;
       }
     };
   }

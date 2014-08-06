@@ -158,7 +158,7 @@
           <input validate-input email-input type="email" placeholder="Company email" name="useremail" ng-model="user.email" class="form-control" ng-pattern="emailRegExp" required>
         </div>
         <div class="col-md-2 push-bottom ">
-          <button class="btn btn-warning demo-request-button">Request a demo</button>
+          <button class="btn btn-warning demo-request-button" ng-disabled="sendingRequest">Request a demo</button>
         </div>
       </div>
     </form>
