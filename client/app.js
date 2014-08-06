@@ -8,20 +8,22 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
 
     $scope.submitForm = function(isValid) {
       $scope.submitted = true;
+      $scope.badRequest = false;
+      $scope.demoRequestSuccess = false;
       if (isValid) {
         $http.post('/request-demo', $scope.user)
           .success(function(data) {
-          	$scope.successUser = $scope.user.first;
-          	$scope.user = {};
-          	$scope.demoRequestSuccess = true;
-          	$timeout(function(){
-          		$scope.demoRequestSuccess = false;
-          		$scope.submitted = false;
-          	}, 2000);
-            console.log(data);
+            $scope.successUser = $scope.user.first;
+            $scope.user = {};
+            $scope.demoRequestSuccess = true;
+            $timeout(function() {
+              $scope.demoRequestSuccess = false;
+              $scope.submitted = false;
+            }, 2000);
+          })
+          .error(function(data){
+          	$scope.badRequest = true;
           });
-      } else {
-        console.log('Bad credentials!');
       }
     };
   }
@@ -57,24 +59,36 @@ app.directive('validateInput', [
       restrict: 'A',
       require: 'ngModel',
       link: function(scope, elem, attr, ctrl) {
+      	// Don't want to irritate the user by validating their input as they're typing
         elem.on('focus', function() {
           elem.removeClass('bad-credentials');
         });
 
+        // After a user has visited the input -- check its validity
         elem.on('blur', function() {
-          console.log(elem[0].value);
           if (attr.hasOwnProperty('emailInput')) {
-            console.log('Email good?', scope.emailRegExp.test(elem[0].value));
+          	// Invalid email
             if (!(scope.emailRegExp.test(elem[0].value))) {
               elem.addClass('bad-credentials');
+              ctrl.$setValidity('invalid', false);
+            } else {
+              ctrl.$setValidity('invalid', true);
             }
           } else if (attr.hasOwnProperty('firstNameInput')) {
+          	// Invalid first name
             if (!(/.+/gi.test(elem[0].value))) {
               elem.addClass('bad-credentials');
+              ctrl.$setValidity('invalid', false);
+            } else {
+              ctrl.$setValidity('invalid', true);
             }
           } else if (attr.hasOwnProperty('lastNameInput')) {
+          	// Invalid last name
             if (!(/.+/gi.test(elem[0].value))) {
               elem.addClass('bad-credentials');
+              ctrl.$setValidity('invalid', false);
+            } else {
+              ctrl.$setValidity('invalid', true);
             }
           }
         });

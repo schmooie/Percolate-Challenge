@@ -138,13 +138,14 @@
   </div>
   <div class="container text-center">
     <form name="demoForm" class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm(demoForm.$valid)" novalidate>
-      <div class="alert-list status-error-content" ng-show="(demoForm.$invalid || demoRequestSuccess) && submitted">
+      <div class="alert-list status-error-content" ng-show="(demoForm.$invalid || demoRequestSuccess || badRequest) && submitted" ng-cloak>
         <div class="alert text-center" ng-class="{'alert-danger': !demoRequestSuccess, 'alert-success': demoRequestSuccess}">
-          <p ng-show="!demoForm.firstname.$error.minlength" ng-hide="demoRequestSuccess">Hey Jason, what's your first name?</p>
-          <p ng-show="!demoForm.lastname.$error.minlength" ng-hide="demoRequestSuccess">Hey Bourne, what's your last name?</p>
-          <p ng-show="!demoForm.useremail.$error.pattern" ng-hide="demoRequestSuccess">Please enter a valid e-mail address.</p>
-          <p ng-show="demoRequestSuccess">{{successUser}}, you're all set. A Percolator will reach out to you soon.</p>
-        </div>
+         <p ng-show="demoForm.firstname.$invalid" ng-hide="demoRequestSuccess">Hey Jason, what's your first name?</p>
+         <p ng-show="demoForm.lastname.$invalid" ng-hide="demoRequestSuccess">Hey Bourne, what's your last name?</p>
+         <p ng-show="demoForm.useremail.$invalid" ng-hide="demoRequestSuccess">Please enter a valid e-mail address.</p>
+         <p ng-show="demoRequestSuccess">{{successUser}}, you're all set. A Percolator will reach out to you soon.</p>
+         <p ng-show="badRequest">Bad request: please check over your information and try again.</p>
+       </div>
       </div>
       <div class="row row-centered-md">
         <div class="col-md-2 push-bottom ">
