@@ -52,7 +52,7 @@ app.post('/request-demo', function(req, res) {
   // Validate the email again
   if (emailRegExp.test(email)) {
     mailOptions.to = email;
-    mailOptions.html = 'Hi ' + firstName + ' ' + lastName + '!<br><br>' + twoCities;
+    mailOptions.html = 'Hi ' + firstName + ' ' + lastName + ',<br><br>' + twoCities;
 
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {

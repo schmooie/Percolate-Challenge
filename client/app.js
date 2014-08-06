@@ -13,15 +13,14 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
       if (isValid) {
         $http.post('/request-demo', $scope.user)
           .success(function(data) {
-            $scope.successUser = $scope.user.first;
-            $scope.user = {};
             $scope.demoRequestSuccess = true;
             $timeout(function() {
+							$scope.user = {};
               $scope.demoRequestSuccess = false;
               $scope.submitted = false;
             }, 2000);
           })
-          .error(function(data){
+          .error(function(data) {
           	$scope.badRequest = true;
           });
       }
