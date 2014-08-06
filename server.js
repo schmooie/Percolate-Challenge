@@ -57,6 +57,7 @@ app.post('/request-demo', function(req, res) {
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {
         console.log(error);
+        res.send(400);
       } else {
         console.log('Message sent: ' + info.response);
         res.send(200);

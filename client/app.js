@@ -21,7 +21,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
 							$scope.user = {};
               $scope.demoRequestSuccess = false;
               $scope.submitted = false;
-            }, 2000);
+            }, 3000);
           })
           .error(function(data) {
           	$scope.sendingRequest = false;
