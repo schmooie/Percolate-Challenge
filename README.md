@@ -17,4 +17,4 @@ However, client side validation, in and of itself, is not sufficient in that it 
 
 In Action
 ==
-This application was deployed on Heroku and available at: [percolate-challenge.herokuapp.com](percolate-challenge.herokuapp.com)
+This application was deployed on Heroku and available at: [percolate-challenge.herokuapp.com](http://percolate-challenge.herokuapp.com)
