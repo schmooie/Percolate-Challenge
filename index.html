@@ -85,7 +85,7 @@
     <div class="bware-hero-background"></div>
     <div class="bware-hero-container">
       <div class="bware-hero-overlay offset orange">
-        <img src="img/suit_supply_logo.png" alt="Suit Supply" width="100px"/>
+        <img src="img/suit_supply_logo.png" alt="Suit Supply" width="100px" />
         <div class="h1 client-hero-title">Efficient, Effective Content Creation</div>
       </div>
     </div>
@@ -184,27 +184,30 @@
     <div class="h4 text-center push-bottom">Learn how Percolate’s Content Marketing platform can help your brand.</div>
   </div>
   <div class="container text-center">
-    <form class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm()">
-      <div class="alert-list status-error-content">
+    <form name="form" class="bware-demo-form status-ready form-inline push-bottom-large  fn-bware-form fn-mixpanel-track" ng-submit="submitForm()" novalidate>
+      <div class="alert-list status-error-content" ng-show="formInvalid">
         <div class="alert alert-danger text-center">
-          Please use a corporate email account
+          <p ng-show="form.firstname.$invalid">Hey Jason, what's your first name?</p>
+          <p ng-show="form.lastname.$invalid">Hey Bourne, what's your last name?</p>
+          <p ng-show="form.useremail.$invalid">Please enter a valid e-mail address.</p>
         </div>
       </div>
       <div class="row row-centered-md">
         <div class="col-md-2 push-bottom ">
-          <input type="text" placeholder="First name" ng-model="user.first" class="fn-required form-control name">
+          <input validate-input first-name-input type="text" placeholder="First name" name="firstname" ng-model="user.first" class="form-control" required>
         </div>
 
         <div class="col-md-2 push-bottom ">
-          <input type="text" placeholder="Last name" ng-model="user.last" class="fn-required form-control name">
+          <input validate-input last-name-input type="text" placeholder="Last name" name="lastname" ng-model="user.last" class="form-control" required>
         </div>
 
         <div class="col-md-2 push-bottom ">
-          <input type="email" placeholder="Company email" ng-model="user.email" class="fn-required form-control email fn-corporate-email">
+          <input validate-input email-input type="email" placeholder="Company email" name="useremail" ng-model="user.email" class="form-control" required>
         </div>
 
         <div class="col-md-2 push-bottom ">
           <button class="btn btn-warning demo-request-button">Request a demo</button>
+
         </div>
       </div>
     </form>
@@ -233,9 +236,6 @@
       </div>
     </div>
   </div>
-
-
-
 
   <div class="brochureware-footer-nav-spacer footer-nav-spacer hidden-xs"></div>
   <footer class="brochureware-nav navbar-fixed-bottom">
